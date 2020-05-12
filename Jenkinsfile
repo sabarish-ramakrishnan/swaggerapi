@@ -6,8 +6,7 @@ pipeline {
     stages {
         stage name: "Checkout",  body: {
             git credentialsId: 'sabarish-ramakrishnan', 
-            url: 'https://github.com/sabarish-ramakrishnan/swaggerapi/', 
-            branch: 'master'
+            url: 'https://github.com/sabarish-ramakrishnan/swaggerapi/'
         }
         stage name: "Restore packages",  body: {
             step{
