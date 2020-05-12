@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Publish'){
             steps{
-                bat "dotnet publish YourProjectPath\\Your_Project.csproj "
+                bat "dotnet publish -c Release -o published/"
             }
         }
     }
