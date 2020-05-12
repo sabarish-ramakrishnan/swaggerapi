@@ -27,5 +27,10 @@ pipeline {
                 bat "dotnet build swaggerapi.csproj --configuration Release"
             }
         }
+        stage('Publish'){
+            steps{
+                bat "dotnet publish YourProjectPath\\Your_Project.csproj "
+            }
+        }
     }
 }
