@@ -31,7 +31,6 @@ pipeline {
             steps{
                 bat """
                     rmdir published/
-                    dotnet publish -c Release -o published/
                 """
             }
         }
