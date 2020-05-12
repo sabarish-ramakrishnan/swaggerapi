@@ -1,19 +1,22 @@
 pipeline {
-    agent any 
+    agent any
     environment {
         dotnet = 'C:\\Program Files\\dotnet\\'
     }
     stages {
-        stage name: "Checkout",  body: {
-            git credentialsId: 'sabarish-ramakrishnan', 
-            url: 'https://github.com/sabarish-ramakrishnan/swaggerapi/'
+        stage('Checkout') {
+            steps {
+                git credentialsId: 'sabarish-ramakrishnan',
+                    url: 'https://github.com/sabarish-ramakrishnan/swaggerapi/'
+            }
         }
-        stage name: "Restore packages",  body: {
-            step{
+
+        stage('Restore packages') {
+            steps {
                 bat "dotnet restore swaggerapi.csproj"
-                }
+            }
         }
-        stage('Build') { 
+        stage('Build') {
             steps {
                 echo message: "hello test!!"
             }
