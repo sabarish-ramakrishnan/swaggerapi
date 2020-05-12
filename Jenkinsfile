@@ -30,7 +30,7 @@ pipeline {
         stage('Publish'){
             steps{
                 bat """
-                    rmdir published/
+                    rmdir /Q /S published/
                 """
             }
         }
