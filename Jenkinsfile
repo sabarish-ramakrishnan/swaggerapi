@@ -16,11 +16,6 @@ pipeline {
                 bat "dotnet restore swaggerapi.csproj"
             }
         }
-        stage('Build') {
-            steps {
-                echo message: "hello test!!"
-            }
-        }
         stage('Clean'){
             steps {
                 bat "dotnet clean swaggerapi.csproj"
