@@ -6,8 +6,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'blueocean',
-                    url: 'https://github.com/sabarish-ramakrishnan/swaggerapi/'
+                git credentialsId: 'Git',
+                    url: 'https://github.com/sabarish-ramakrishnan/swaggerapi/',
+                    branch: 'master'
             }
         }
 
