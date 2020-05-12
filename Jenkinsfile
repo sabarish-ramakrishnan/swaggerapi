@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'sabarish-ramakrishnan',
+                git credentialsId: 'blueocean',
                     url: 'https://github.com/sabarish-ramakrishnan/swaggerapi/'
             }
         }
@@ -19,6 +19,16 @@ pipeline {
         stage('Build') {
             steps {
                 echo message: "hello test!!"
+            }
+        }
+        stage('Clean'){
+            steps {
+                bat "dotnet clean swaggerapi.csproj"
+            }
+        }
+        stage('Build'){
+            steps {
+                bat "dotnet build swaggerapi.csproj --configuration Release"
             }
         }
     }
