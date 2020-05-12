@@ -29,7 +29,10 @@ pipeline {
         }
         stage('Publish'){
             steps{
-                bat "dotnet publish -c Release -o published/"
+                bat """
+                    rmdir published/
+                    dotnet publish -c Release -o published/
+                """
             }
         }
     }
