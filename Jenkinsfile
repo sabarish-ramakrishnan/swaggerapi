@@ -30,7 +30,7 @@ pipeline {
         stage('Publish'){
             steps{
                 bat """
-                    rmdir /Q /S published/
+                    dotnet publish -c Release -o published/
                 """
             }
         }
